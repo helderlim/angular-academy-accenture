@@ -26,6 +26,8 @@ export class ExercicioDataBindingComponent implements OnInit {
   isDisabled = true;
   accessibilityText= 'Um texto acessivel a ser lido ';
 
+  valorDoInput = '';
+
   constructor() { 
     setTimeout(() => {
       console.log('isDisabled: ', this.isDisabled);
@@ -42,11 +44,29 @@ export class ExercicioDataBindingComponent implements OnInit {
    return this.imageURL;
   }
 
+  onClick(_$event: any){
+    console.log('clicou !', _$event);
+    
+  }
+
+  digitouAlgo(_$event: any){
+    this.valorDoInput = _$event.target.value;
+    console.log(_$event);
+    
+  }
+
   onClickBotaoEmissor(_$event: any){
     console.log('Devo emitir informações para o componente pai. ');
     //emitindo o evento 
     this.clicado.emit(_$event);
     
   }
+
+  
+  passouMouse(){
+    console.log('Alguem passou o Mouse ');
+    
+  }
+  
 
 }
