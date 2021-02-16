@@ -1,0 +1,23 @@
+<h2>Palavra:  {{ palavra}}</h2>
+<h2>cor:  {{ color}}</h2>
+<input type="text" [value]="initalValue">
+<br>
+<button [disabled]="isDisabled">clik here</button>
+
+<!--EVENT BINDING escutar eventos do html -->
+<button (click)="botaoClicado()">
+    clik here
+    </button>
+<br>
+<p [attr.aria-label]="accessibilityText">
+    Um texto qualquer
+</p>
+<br>
+<!--EVENT BINDING CUSTOMISADO AULA-->
+<button (click)="onClickBotaoEmissor($event)">
+    Emitir Informação de clique. 
+</button>
+<br><br><br>
+
+
+<img [src]="imageURL" >
