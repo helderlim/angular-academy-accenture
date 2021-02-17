@@ -55,3 +55,18 @@ ola estou dentro do ngif1
      {{first}} - {{index + 1}}  {{ carro.placa }} || {{ carro.cor }}- {{ultimo}}
     </li>
 </ul>
+
+<hr>
+<h2>Resolução do exercicio</h2>
+
+<ul>
+    <li *ngFor="let memesAgrupados of MEMES_AGRUPADOS_POR_CATEGORIA">
+        <h3>{{memesAgrupados.categoria}}</h3>
+        <div *ngFor="let meme of memesAgrupados.memes, let par = even">
+            <img [src]="meme.imagemURL" alt="sumiu" *ngIf="par">
+            <h2 *ngIf="!par">PAR</h2>
+        </div>
+    </li>
+</ul>
+
+<br><br><br><br>
