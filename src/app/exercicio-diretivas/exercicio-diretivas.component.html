@@ -1,0 +1,35 @@
+<p>Valor atual de deveExibir: {{ deveExibir}}</p>
+<!--pego o evento de click para chamar a função trocarValor-->
+<button (click)="trocarValor()">trocar valor</button>
+
+<!--adiciono uma condição que retorna um booleano para exibir-->
+<div *ngIf="deveExibir">
+ola estou dentro do ngif1
+</div>
+
+<!--condição que chama a função/ deve exibir se for maior que 10-->
+<div *ngIf="soma(5, 6) > 10">
+    eu sou a soma maior que 10
+</div>
+
+
+<!--sitax expandida mas utilize o *-->
+<ng-template [ngIf]="deveExibir">
+    <div>content to render whe condicion is true</div>
+</ng-template>
+
+<!--se for falso exibir outra coisa-->
+<div *ngIf="deveExibir; else elseBlock">
+    deu true por isso estou aqui 
+</div>
+
+<!--criando uma referencia dentro do template-->
+<ng-template #elseBlock>
+    deu falso por isso eu estou aqui 
+</ng-template>
+
+<!--outra forma com os templates separados -->
+
+<div *ngIf="deveExibir; then thenBlock else senaoBlock"></div>
+<ng-template #thenBlock>elemento separado is true.</ng-template>
+<ng-template #senaoBlock>elemento separado is false.</ng-template>
