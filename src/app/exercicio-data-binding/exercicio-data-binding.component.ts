@@ -67,6 +67,11 @@ export class ExercicioDataBindingComponent implements OnInit {
     console.log('Alguem passou o Mouse ');
     
   }
+
+  onValorAtualizadoNoContador(novoValor: any){
+    console.log('onValorAtualizadoNoContador', novoValor);
+    
+  }
   
 
 }

@@ -1,3 +1,11 @@
+
+<!--EXERCICIO CONTADOR-->
+<app-exercicio-contador
+[valor]="10"
+(valorMudou)="onValorAtualizadoNoContador($event)"
+></app-exercicio-contador>
+<hr>
+
 <h1>Exemplos Event Bingding: </h1>
 
 <button (click)="onClick($event)" (mouseenter)="passouMouse()">Clique em mim</button>

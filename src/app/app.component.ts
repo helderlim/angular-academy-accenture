@@ -20,5 +20,7 @@ export class AppComponent {
     console.log('Appcomponent EVENTO RECEBIDO ', _$event);
     
   }
+
+ 
  
 }
