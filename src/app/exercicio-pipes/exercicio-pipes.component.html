@@ -1,0 +1,6 @@
+<!--deixa tudo maiusculo pipe-->
+<p>Titulo: {{filme.titulo | uppercase}}</p>
+<p>Avaliação: {{filme.estrelas | number:'1.1-2'}}</p>
+
+<p>Preço aluguel: {{filme.precoAluguel | currency: 'BRL'}}</p>
+<p>Data de lançamento: {{filme.dataLancamento | date: 'short'}}</p>
