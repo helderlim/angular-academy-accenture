@@ -1,9 +1,10 @@
+valor autal de valorContador: {{valorContador}}
 
 <!--EXERCICIO CONTADOR-->
 <app-exercicio-contador
-[valor]="10"
-(valorMudou)="onValorAtualizadoNoContador($event)"
-></app-exercicio-contador>
+
+[(valor)]="valorContador"
+><!-- TWO WAY DATA BINDING acima--></app-exercicio-contador>
 <hr>
 
 <h1>Exemplos Event Bingding: </h1>

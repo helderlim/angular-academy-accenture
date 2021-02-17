@@ -9,16 +9,17 @@ export class ExercicioContadorComponent  {
 
 
   @Input() valor = 0;
-  @Output() valorMudou = new EventEmitter();
+  //TWO WAY DATA BINDING
+  @Output() valorChange = new EventEmitter();
 
   incrementar(){
     this.valor = this.valor+1
-    this.valorMudou.emit(this.valor);
+    this.valorChange.emit(this.valor);
   }
 
   decrementar(){
     this.valor = this.valor-1
-    this.valorMudou.emit(this.valor);
+    this.valorChange.emit(this.valor);
 
   }
 }

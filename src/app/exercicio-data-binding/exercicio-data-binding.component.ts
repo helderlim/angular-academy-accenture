@@ -28,6 +28,8 @@ export class ExercicioDataBindingComponent implements OnInit {
 
   valorDoInput = '';
 
+  valorContador = 10;
+
   constructor() { 
     setTimeout(() => {
       console.log('isDisabled: ', this.isDisabled);
@@ -68,10 +70,11 @@ export class ExercicioDataBindingComponent implements OnInit {
     
   }
 
-  onValorAtualizadoNoContador(novoValor: any){
-    console.log('onValorAtualizadoNoContador', novoValor);
+  // onValorAtualizadoNoContador(novoValor: any){
+  //   this.valorContador = novoValor;
+  //   console.log('onValorAtualizadoNoContador', novoValor);
     
-  }
+  // } FUNÇÃO NÃO EXISTE POR CONTA DO <!-- TWO WAY DATA BINDING--!>
   
 
 }
