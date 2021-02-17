@@ -33,3 +33,25 @@ ola estou dentro do ngif1
 <div *ngIf="deveExibir; then thenBlock else senaoBlock"></div>
 <ng-template #thenBlock>elemento separado is true.</ng-template>
 <ng-template #senaoBlock>elemento separado is false.</ng-template>
+
+<hr>
+<!-- array criado no meu components-->
+
+<ul>
+    <!--para cada item da array ele vai criar um LI -->
+    <li *ngFor="let fruta of listaFrutas"> {{fruta}} </li>
+</ul>
+
+<ul>
+    <li *ngFor="let carro of carrosLista">
+        {{ carro.placa }} || {{ carro.cor }}
+    </li>
+</ul>
+
+<ul>
+    <!--atribuir a variavel index do ngfor para um tipo de lista numerica ou contador -->
+    <li *ngFor="let carro of carrosLista, let index = index;  first as first, last as ultimo">
+        <!--para não iniciar em zero INTERPOLAÇÃO-->
+     {{first}} - {{index + 1}}  {{ carro.placa }} || {{ carro.cor }}- {{ultimo}}
+    </li>
+</ul>
