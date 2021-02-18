@@ -46,8 +46,8 @@ export class ExercicioDataBindingComponent implements OnInit {
    return this.imageURL;
   }
 
-  onClick(_$event: any){
-    console.log('clicou !', _$event);
+  onClick($event: any){
+    console.log('clicou !', $event);
     
   }
 
