@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { ContatosComponent } from './contatos/contatos.component';
 import { ExtratoComponent } from './extrato/extrato.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -13,12 +14,15 @@ const routes: Routes = [{
   path: 'home',
   component: HomeComponent,
 }, {
-  path:'extrato',
+  path: 'extrato',
   component: ExtratoComponent,
-}, 
+}, {
+  path: 'contatos',
+  component: ContatosComponent,
+},
 //define redirecionamento da rota raiz 
 {
-  path:'',
+  path: '',
   redirectTo: 'home',
   pathMatch: 'full',
 }, {
