@@ -10,7 +10,7 @@ import { ExtratoService } from './extrato.service';
 export class ExtratoComponent implements OnInit {
 
 
-  transacoes!: any[];
+  transacoes: any;
 
 
 
@@ -18,7 +18,10 @@ export class ExtratoComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.transacoes = this.extratoService.getTransacoes();
+    this.extratoService.getTransacoes()
+    .subscribe(response=>{
+      this.transacoes = response;
+    })
   }
 
 }
