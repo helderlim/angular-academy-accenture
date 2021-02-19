@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { finalize } from 'rxjs/operators';
+import { finalize, take } from 'rxjs/operators';
 
 import { Transacao } from './extrato.interface';
 import { ExtratoService } from './extrato.service';
@@ -30,7 +30,9 @@ export class ExtratoComponent implements OnInit {
     this.estaCarregando = true;
     this.erroNoCarregamento = false;
     this.extratoService.getTransacoes()
-      .pipe(
+     
+    .pipe(
+         take(1),
         finalize(()=> this.estaCarregando = false) 
       )
       .subscribe(response => this.onSucesso(response),
