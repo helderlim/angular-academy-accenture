@@ -13,11 +13,15 @@ export class ExtratoService {
 
   constructor(
     private http: HttpClient,
-    ) { }
-   
-    getTransacoes() {
-      return this.http.get<Transacao[]>(this.API_URL+'/transacoes')
-    
-    }
+  ) { }
+
+  getTransacoes() {
+    //Simular erro
+    // const error = throwError('erro generico ');
+    // return timer(3000).pipe(mergeMap(() => error))
+      
+    return this.http.get<Transacao[]>(this.API_URL + '/transacoes')
+
+  }
 
 }
