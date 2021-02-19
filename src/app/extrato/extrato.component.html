@@ -1,5 +1,15 @@
-<div class="container">
-    <table class="table table-hover">
+<div class="container text-center p-5">
+
+    <div class="spinner-border text-danger" role="status" *ngIf="estaCarregando">
+        <span class="sr-only">Loading...</span>
+    </div>
+
+    <div *ngIf="erroNoCarregamento">
+        <h2>deu erro =(</h2>
+        <button (click)="carregarExtrato()">Tentar novamente </button>
+    </div>
+
+    <table class="table table-hover" *ngIf="!estaCarregando && !erroNoCarregamento">
         <tr>
             <th> ID </th>
             <th> Data </th>
