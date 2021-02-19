@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  //variaveis de ambiente DESENVOLVIMENTO NESSE CASO 
+  API_URL: 'https://my-json-server.typicode.com/vitorfgsantos/fake-api',
 };
 
 /*
