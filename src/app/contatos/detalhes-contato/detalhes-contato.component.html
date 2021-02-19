@@ -1,1 +1,29 @@
-<p>detalhes-contato works!</p>
+<div class="container text-center p-5">
+
+    <div class="spinner-border text-danger" role="status" *ngIf="estaCarregando">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <div *ngIf="erroDeCarregamento">
+        <h2>deu erro =(</h2>
+        <button (click)="carregarContato()">Tentar novamente </button>
+    </div>
+
+
+    <div *ngIf="!estaCarregando && !erroDeCarregamento">
+        <p>ID: {{contato.id}}</p>
+        <p>Nome: {{contato.nome}}</p>
+        <p>CPF: {{contato.cpf}}</p>
+        <p>Banco:  {{contato.banco}}</p>
+        <p>CC: {{contato.cc}}</p>
+        <p>AG: {{contato.ag}}</p>
+    
+
+    <button class="btn btn-secondary" (click)="voltar()">
+        Voltar
+    </button>
+</div>
+</div>
+
+
+
+

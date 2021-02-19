@@ -19,4 +19,9 @@ export class ContatosService {
     return this.http.get<Contato[]>(this.API_URL + '/contatos');
       
   }
+
+  getContato(id: any){
+    return this.http.get<Contato>(this.API_URL + '/contatos/'+ id);
+      
+  }
 }
