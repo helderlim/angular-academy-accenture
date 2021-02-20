@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-
+    // @ViewChild('emailInput')
+    // emailInput: any = ElementRef ;
     email!: string;
     password!: string;
   
@@ -18,7 +20,10 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form: any){
+  //  this.emailInput.nativeElement.focus();
+    
     if(!form.valid){
+      
       form.controls.email.markAsTouched();
       form.controls.password.markAsTouched();
 
@@ -33,7 +38,7 @@ export class LoginComponent implements OnInit {
     
   }
 
-  exibeErro(nomeControle: string, form: any){
+  exibeErro(nomeControle: string, form: NgForm){
     if(!form.controls[nomeControle]){
       return false
     }
