@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+import { LoginService } from './login.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,8 +15,11 @@ export class LoginComponent implements OnInit {
     email!: string;
     password!: string;
   
+  
 
-  constructor() { }
+  constructor(
+    private loginService: LoginService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -35,7 +40,21 @@ export class LoginComponent implements OnInit {
     console.log(this.password);
 
     
-    
+    this.login();
+  }
+
+  login(){
+    this.loginService.logar(this.email, this.password)
+    .subscribe(
+      (      response: any) => {
+        console.log('sucesso logou ');
+        
+      }, 
+      (      error: any) =>{
+        console.log('não');
+        
+      }
+    )
   }
 
   exibeErro(nomeControle: string, form: NgForm){
