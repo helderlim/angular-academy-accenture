@@ -8,14 +8,14 @@
             type="email" class="form-control" 
             placeholder="Email" name="email" 
             [(ngModel)]="email" email required>
-            <p *ngIf="exibeErro('email',form)" >E-mail Invalido.</p>
+            <p *ngIf="exibeErro('email',form)" class="text-left">E-mail Invalido.</p>
         </div>
         <div class="pt-2">
             <input 
             type="password" class="form-control" 
             placeholder="password" name="password" 
             [(ngModel)]="password" required>
-            <p *ngIf="exibeErro('password',form)" >Senha Invalido.</p>
+            <p *ngIf="exibeErro('password',form)" class="text-left">Senha Invalido.</p>
 
         </div>
         <div class="pt-2">

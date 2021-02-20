@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
       form.controls.email.markAsTouched();
       form.controls.password.markAsTouched();
 
-      console.log('Formulario invalido !!!');
+     
       
     }
     console.log(form.value);
