@@ -18,6 +18,10 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form: any){
+    if(!form.valid){
+      console.log('Formulario invalido !!!');
+      
+    }
     console.log(form.value);
     console.log(this.email);
     console.log(this.password);
