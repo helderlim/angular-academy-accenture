@@ -1,4 +1,6 @@
 <div class="text-center">
+
+    
     <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="form-signin pt-5">
 
         <div class="pt-2">
@@ -6,12 +8,15 @@
             type="email" class="form-control" 
             placeholder="Email" name="email" 
             [(ngModel)]="email" email required>
+            <p *ngIf="exibeErro('email',form)" >E-mail Invalido.</p>
         </div>
         <div class="pt-2">
             <input 
             type="password" class="form-control" 
             placeholder="password" name="password" 
             [(ngModel)]="password" required>
+            <p *ngIf="exibeErro('password',form)" >Senha Invalido.</p>
+
         </div>
         <div class="pt-2">
             <button class="btn btn-primary btn-block" type="submit">Entrar</button>

@@ -19,6 +19,9 @@ export class LoginComponent implements OnInit {
 
   onSubmit(form: any){
     if(!form.valid){
+      form.controls.email.markAsTouched();
+      form.controls.password.markAsTouched();
+
       console.log('Formulario invalido !!!');
       
     }
@@ -28,6 +31,13 @@ export class LoginComponent implements OnInit {
 
     
     
+  }
+
+  exibeErro(nomeControle: string, form: any){
+    if(!form.controls[nomeControle]){
+      return false
+    }
+    return form.controls[nomeControle]?.invalid && form.controls[nomeControle]?.touched;
   }
 
 }
