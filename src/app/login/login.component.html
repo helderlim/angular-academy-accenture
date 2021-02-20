@@ -17,12 +17,19 @@
             placeholder="password" name="password" 
             [(ngModel)]="password" required
             [ngClass]="exibeErro('password', form) ? 'is-invalid': ''">
-            <div *ngIf="exibeErro('password',form)" class="invalid-feedback" #password>Senha Invalido.</div>
+            <div *ngIf="exibeErro('password',form)" class="invalid-feedback" #password  >Senha Invalido.</div>
 
         </div>
+        <p *ngIf="erroNoLogin"> Usuario ou senha invalidos</p>
         <div class="pt-2">
-            <button class="btn btn-primary btn-block" type="submit">Entrar</button>
+            <button class="btn btn-primary btn-block" type="submit" [disabled]="estaCarregando">
+                Entrar
+            </button>
         </div>
 
     </form>
+
+    <div *ngIf="estaCarregando" class="spinner-border" role="status"> 
+        <span class="sr-only">Loading...</span>
+    </div>
 </div>

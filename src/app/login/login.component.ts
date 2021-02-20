@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { finalize } from 'rxjs/operators';
 
 import { LoginService } from './login.service';
 
@@ -15,6 +16,8 @@ export class LoginComponent implements OnInit {
     email!: string;
     password!: string;
   
+    estaCarregando!: boolean;
+    erroNoLogin!: boolean;
   
 
   constructor(
@@ -25,6 +28,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form: any){
+    this.erroNoLogin = false;
   //  this.emailInput.nativeElement.focus();
     
     if(!form.valid){
@@ -44,13 +48,18 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
+    this.estaCarregando = true;
     this.loginService.logar(this.email, this.password)
+    .pipe(
+      finalize(()=> this.estaCarregando = false)
+    )
     .subscribe(
-      (      response: any) => {
+           response => {
         console.log('sucesso logou ');
         
       }, 
-      (      error: any) =>{
+         error =>{
+           this.erroNoLogin = true;
         console.log('não');
         
       }
