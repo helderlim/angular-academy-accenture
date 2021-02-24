@@ -1,14 +1,17 @@
 
 <div class="container pt-5">
-    <form>
+    <!--diretiva apenas de formulario reativo-->
+    <form [formGroup]="contatoForm">
         <div class="form-group">
             <label for="nome">Nome</label>
-            <input type="text" class="form-control" id="nome" placeholder="Nome">
+            <!-- diretiva para associar o campo com a variavel  -->
+            <input type="text" class="form-control" id="nome" placeholder="Nome" formControlName="nome">
         </div>
 
         <div class="form-group">
-            <label for="cpf">CPF</label>
-            <input type="text" class="form-control" id="cpf" placeholder="CPF">
+            <label for="banco">Banco</label>
+            <input type="text" class="form-control" id="banco" placeholder="Banco" formControlName="banco">
         </div>
+        <button (click)="salvarContato()">Salvar</button>
     </form>
 </div>

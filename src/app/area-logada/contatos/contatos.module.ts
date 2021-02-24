@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ContatosRoutingModule } from './contatos-routing.module';
 import { DetalharContatoComponent } from './detalhar-contato/detalhar-contato.component';
@@ -15,7 +16,8 @@ import { NovoContatoComponent } from './novo-contato/novo-contato.component';
   ],
   imports: [
     CommonModule,
-    ContatosRoutingModule
+    ContatosRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class ContatosModule { }
