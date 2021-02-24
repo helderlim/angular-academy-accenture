@@ -5,16 +5,32 @@
         <div class="form-group">
             <label for="nome">Nome</label>
             <!-- diretiva para associar o campo com a variavel  -->
-            <input type="text" class="form-control" id="nome" placeholder="Nome" formControlName="nome">
+            <input 
+            type="text" class="form-control" 
+            id="nome" placeholder="Nome" 
+            formControlName="nome"
+            [class.is-invalid]="exibeErro('nome')"
+             >
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" class="form-control" id="email" placeholder="email" formControlName="email">
+            <input 
+            type="text" class="form-control" 
+            id="email" placeholder="email"
+            formControlName="email"
+            [class.is-invalid]="exibeErro('email')"
+            
+            >
         </div>
 
         <div class="form-group">
             <label for="banco">Banco</label>
-            <input type="text" class="form-control" id="banco" placeholder="Banco" formControlName="banco">
+            <input 
+            type="text" class="form-control" 
+            id="banco" placeholder="Banco"
+            formControlName="banco"
+            [class.is-invalid]="exibeErro('banco')"
+             >
         </div>
         <button (click)="salvarContato()">Salvar</button>
     </form>
