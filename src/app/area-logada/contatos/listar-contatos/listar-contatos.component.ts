@@ -69,6 +69,9 @@ export class ListarContatosComponent implements OnInit {
   onErrorDeletarContato(){
 
   }
+  novoContato(){
+    this.router.navigate(['contatos/novo']);
+  }
   
 
 }
