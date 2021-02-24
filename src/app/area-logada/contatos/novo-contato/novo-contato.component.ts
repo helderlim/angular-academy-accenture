@@ -22,7 +22,8 @@ export class NovoContatoComponent implements OnInit {
 
     this.contatoForm = this.formBuilder.group({
       nome: ['', Validators.required],
-      banco: [''],
+      banco: ['', Validators.required, Validators.minLength(3)],
+      email: ['', Validators.email, Validators.required],
     })
   }
 
