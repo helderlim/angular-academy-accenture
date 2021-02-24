@@ -12,9 +12,9 @@ import { ContatosService } from '../contatos.service';
 })
 export class DetalharContatoComponent implements OnInit {
 
-  contato: Contato;
-  estaCarregando: boolean;
-  erroNoCarregamento: boolean;
+  contato!: Contato;
+  estaCarregando!: boolean;
+  erroNoCarregamento!: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -31,7 +31,7 @@ export class DetalharContatoComponent implements OnInit {
     this.erroNoCarregamento = false;
 
     const idContato = this.route.snapshot.paramMap.get('id');
-    this.contatosService.getContato(idContato)
+    this.contatosService.getContato(idContato as any)
       .pipe(
         take(1),
         finalize(() => this.estaCarregando = false)

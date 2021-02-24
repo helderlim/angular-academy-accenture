@@ -10,14 +10,14 @@ import { AuthService } from '../../shared/services/auth/auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  usuario: Usuario;
+  usuario!: Usuario;
 
   constructor(
     private authService: AuthService,
   ) { }
 
   ngOnInit() {
-    this.usuario = this.authService.getUsuario();
+    this.usuario = this.authService.getUsuario() as any;
   }
 
 }

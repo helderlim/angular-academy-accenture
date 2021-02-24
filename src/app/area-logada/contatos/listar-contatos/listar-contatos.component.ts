@@ -12,9 +12,9 @@ import { ContatosService } from '../contatos.service';
 })
 export class ListarContatosComponent implements OnInit {
 
-  contatos: Contato[];
-  estaCarregando: boolean;
-  erroNoCarregamento: boolean;
+  public contatos!: Contato[];
+  estaCarregando!: boolean;
+  erroNoCarregamento!: boolean;
 
   constructor(
     private contatosService: ContatosService,
@@ -49,7 +49,7 @@ export class ListarContatosComponent implements OnInit {
     console.error(error);
   }
 
-  irParaDetalhes(idContato: string) {
+  irParaDetalhes(idContato: any) {
     this.router.navigate([`contatos/${idContato}`]);
   }
 

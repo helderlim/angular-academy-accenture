@@ -12,21 +12,21 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent {
 
-  @ViewChild('emailInput') emailInput: ElementRef;
-  @ViewChild('passwordInput') passwordInput: ElementRef;
+  @ViewChild('emailInput') emailInput!: ElementRef;
+  @ViewChild('passwordInput') passwordInput!: ElementRef;
 
-  email: string;
-  password: string;
+  email!: string;
+  password!: string;
 
-  estaCarregando: boolean;
-  erroNoLogin: boolean;
+  estaCarregando!: boolean;
+  erroNoLogin!: boolean;
 
   constructor(
     private loginService: LoginService,
     private router: Router,
   ) { }
 
-  onSubmit(form) {
+  onSubmit(form: any) {
     this.erroNoLogin = false;
 
     if (!form.valid) {

@@ -12,11 +12,11 @@ import { ExtratoService } from './extrato.service';
 })
 export class ExtratoComponent implements OnInit {
 
-  transacoes: Transacao[];
+  transacoes!: Transacao[];
   pagina = 1;
 
-  estaCarregando: boolean;
-  erroNoCarregamento: boolean;
+  estaCarregando!: boolean;
+  erroNoCarregamento!: boolean;
 
   constructor(
     private extratoService: ExtratoService

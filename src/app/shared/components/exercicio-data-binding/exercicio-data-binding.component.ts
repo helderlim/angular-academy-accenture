@@ -7,8 +7,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ExercicioDataBindingComponent implements OnInit {
 
-  @Input() palavra: string;
-  @Input() color: string;
+  @Input() palavra!: string;
+  @Input() color!: string;
   @Output() clicado = new EventEmitter();
 
   imageURL = 'https://3.bp.blogspot.com/_lPCKmqNhqr0/TCMMGbVg2oI/AAAAAAAABLQ/HHgh5Gjbot0/s1600/gatinho-filhote-fofo.jpg';
@@ -34,11 +34,11 @@ export class ExercicioDataBindingComponent implements OnInit {
     return this.imageURL;
   }
 
-  onClick($event) {
+  onClick($event: any) {
     console.log('clicou!', $event);
   }
 
-  digitouAlgo($event) {
+  digitouAlgo($event: any) {
     this.valorDoInput = $event.target.value;
     console.log($event);
   }
@@ -47,7 +47,7 @@ export class ExercicioDataBindingComponent implements OnInit {
     console.log('alguem passou mouse');
   }
 
-  onClickBotaoEmissor($event) {
+  onClickBotaoEmissor($event: any) {
     console.log('Devo emitir informações para o componente pai.');
     this.clicado.emit('Fui clicado!!!!');
   }

@@ -9,7 +9,7 @@ import { AuthService } from '../../services/auth/auth.service';
 })
 export class HeaderComponent {
 
-  @Input() title: string;
+  @Input() title!: string;
 
   constructor(
     private authService: AuthService,

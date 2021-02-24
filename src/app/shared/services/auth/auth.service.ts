@@ -8,8 +8,8 @@ import { Usuario } from '../../interfaces/usuario.interface';
 })
 export class AuthService {
 
-  usuario: Usuario;
-  token: string;
+  usuario!: Usuario;
+  token!: string;
 
   constructor(
     private router: Router,
@@ -62,8 +62,8 @@ export class AuthService {
   }
 
   logout() {
-    this.usuario = null;
-    this.token = null;
+    this.usuario = null as any;
+    this.token = null as any;
     localStorage.clear();
     this.router.navigate(['login']);
   }

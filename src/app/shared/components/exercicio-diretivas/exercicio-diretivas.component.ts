@@ -39,7 +39,7 @@ export class ExercicioDiretivasComponent {
     this.deveExibir = !this.deveExibir;
   }
 
-  soma(numero1, numero2) {
+  soma(numero1: any, numero2: any) {
     return numero1 + numero2;
   }
 
