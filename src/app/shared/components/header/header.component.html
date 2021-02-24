@@ -1,23 +1,18 @@
 <header class="header">
-    <h1 class="header__title">{{ title }}</h1>
+  <h1 class="header__title"> {{ title }} </h1>
 
-    <ul class="nav-bar-list">
-      <li>
-        <!-- não recarrega a pagina toda e adiciona uma classe css quando ativado
-        o options serve para definir a rota extata pos o /nada fica ativado constantemente
-        -->
-        <a routerLink="home" routerLinkActive="ativado" >Home</a>
-      </li>
-      <li>
-        <a routerLink="extrato" routerLinkActive="ativado">Extrato</a>
-      </li>
-
-      <li>
-        <a routerLink="contatos" routerLinkActive="ativado">Contatos</a>
-      </li>
-      
-      <li>
-        <a routerLink="login" routerLinkActive="ativado">Login</a>
-      </li>
-    </ul>
-  </header>
+  <ul class="nav-bar-list">
+    <li>
+      <a routerLink="/home" routerLinkActive="ativado"> Home </a>
+    </li>
+    <li>
+      <a routerLink="/extrato" routerLinkActive="ativado"> Extrato </a>
+    </li>
+    <li>
+      <a routerLink="/contatos" routerLinkActive="ativado"> Contatos </a>
+    </li>
+    <li>
+      <button class="btn btn-dark" (click)="logout()">Logout</button>
+    </li>
+  </ul>
+</header>

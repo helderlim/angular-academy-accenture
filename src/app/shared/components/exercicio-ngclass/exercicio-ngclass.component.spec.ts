@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ExercicioNgclassComponent } from './exercicio-ngclass.component';
 
@@ -6,12 +6,12 @@ describe('ExercicioNgclassComponent', () => {
   let component: ExercicioNgclassComponent;
   let fixture: ComponentFixture<ExercicioNgclassComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
       declarations: [ ExercicioNgclassComponent ]
     })
     .compileComponents();
-  });
+  }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ExercicioNgclassComponent);

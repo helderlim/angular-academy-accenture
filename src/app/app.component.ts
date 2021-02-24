@@ -1,29 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  //esta linkando meu html
-  templateUrl: './app.component.html',
+  template: '<router-outlet></router-outlet>',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
-  title = 'Seja bem-vindo! ????';
-  pudim= 'uma palavra';
-  favoriteColor = 'green';
+export class AppComponent {
 
+  constructor() { }
 
-  constructor(){
-
-  }
-//realiza coisas na inicialização da aplicação  
-  ngOnInit(){
-      }
-
-  eventoRecebido(_$event: any){
-    console.log('Appcomponent EVENTO RECEBIDO ', _$event);
-    
-  }
-
- 
- 
 }

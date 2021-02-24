@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { finalize, take } from 'rxjs/operators';
 
-import { Transacao } from './extrato.interface';
+import { Transacao } from './extrato.interfaces';
 import { ExtratoService } from './extrato.service';
+
 
 @Component({
   selector: 'app-extrato',
@@ -11,17 +12,15 @@ import { ExtratoService } from './extrato.service';
 })
 export class ExtratoComponent implements OnInit {
 
-
-  transacoes!: Array<Transacao>;
+  transacoes: Transacao[];
   pagina = 1;
 
-  estaCarregando!: boolean;
+  estaCarregando: boolean;
+  erroNoCarregamento: boolean;
 
-  erroNoCarregamento!: boolean;
-
-
-  constructor(private extratoService: ExtratoService) {
-  }
+  constructor(
+    private extratoService: ExtratoService
+  ) { }
 
   ngOnInit() {
     this.carregarExtrato();
@@ -30,43 +29,35 @@ export class ExtratoComponent implements OnInit {
   carregarExtrato() {
     this.estaCarregando = true;
     this.erroNoCarregamento = false;
-    const page = 1;
+
     this.extratoService.getTransacoes(this.pagina)
-     
-    .pipe(
-         take(1),
-        finalize(()=> this.estaCarregando = false) 
+      .pipe(
+        take(1),
+        finalize(() => this.estaCarregando = false)
       )
-      .subscribe(response => this.onSucesso(response),
-        error => this.onError(error)
+      .subscribe(
+        response => this.onSuccess(response),
+        error => this.onError(error),
       );
   }
 
-  onSucesso(response: Transacao[]) {
-    {
-      
-      this.transacoes = response;
-    }
+  onSuccess(response: Transacao[]) {
+    this.transacoes = response;
   }
 
   onError(error: any) {
-    {
-    
-      this.erroNoCarregamento = true;
-
-    }
+    this.erroNoCarregamento = true;
+    console.error(error);
   }
 
-  paginaAnterior(){
-    this.pagina = this.pagina-1;
+  proximaPagina() {
+    this.pagina = this.pagina + 1;
     this.carregarExtrato();
-
   }
 
-  proximaPagina(){
-    this.pagina = this.pagina+1;
+  paginaAnterior() {
+    this.pagina = this.pagina - 1;
     this.carregarExtrato();
-
   }
 
 }

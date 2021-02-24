@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-exercicio-ngclass',
   templateUrl: './exercicio-ngclass.component.html',
   styleUrls: ['./exercicio-ngclass.component.scss'],
- 
+  encapsulation: ViewEncapsulation.Emulated,
 })
-export class ExercicioNgclassComponent  {
+export class ExercicioNgclassComponent {
 
   deveSerVerde = false;
 
-  tornarVerde(){
+  tornarVerde() {
     this.deveSerVerde = true;
   }
 

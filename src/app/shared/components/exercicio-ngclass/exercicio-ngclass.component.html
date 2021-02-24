@@ -1,19 +1,18 @@
 <p>exercicio-ngclass works!</p>
 
+<button (click)="tornarVerde()"> Tornar verde</button>
 
-<button (click)="tornarVerde()">Deve ser Verde</button>
-<!--um if com a class-->
-<p [ngClass]="deveSerVerde ? 'verde' : 'vermelho'">Cores</p>
+<p [ngClass]="deveSerVerde ? 'verde' : 'vermelho'"> Testando </p>
 
 <p [ngClass]="{
-    'verde': deveSerVerde,
-    'vermelho': !deveSerVerde 
-}">Testando</p>
+  'verde': deveSerVerde,
+  'vermelho': !deveSerVerde
+}"> Testando 2 </p>
 
-<p [class]="deveSerVerde? 'verde': 'vermelho'">
-    testando property binding class
+<p [class]="deveSerVerde ? 'verde' : 'vermelho'">
+  Testando PropertyBinding Class
 </p>
 
 <p [class.verde]="deveSerVerde">
-    testando property binding class
+  Testando PropertyBinding Class
 </p>

@@ -11,19 +11,17 @@ export class NaoEstaLogadoGuard implements CanActivate {
   constructor(
     private authService: AuthService,
     private router: Router,
-  ){}
-  
-  canActivate(): boolean{
+  ) { }
+
+  canActivate(): boolean {
     const estaLogado = this.authService.estaLogado();
 
-    if(!estaLogado){
+    if (!estaLogado) {
       return true;
     }
 
-    
-    this.router.navigate([ 'home']);
+    this.router.navigate(['home']);
     return false;
   }
-    
-  
+
 }

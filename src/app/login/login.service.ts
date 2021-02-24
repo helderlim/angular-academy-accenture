@@ -14,27 +14,27 @@ export class LoginService {
     private authService: AuthService,
   ) { }
 
-  logar(email: string, senha: string): Observable<LoginResponse>{
-    //return this.post(this.API_URL + '/auth', {})
-    if (email === 'helderfelima16@gmail.com' && senha === '123'){
+  logar(email: string, senha: string): Observable<LoginResponse> {
+    if (email === 'vitorfgsantos@outlook.com' && senha === '123') {
       return of({
-
         usuario: {
-          nome: 'helder',
-          sobrenome: 'Farias', 
-          email: 'helderfelima16@gmail.com',
+          nome: 'Vitor',
+          sobrenome: 'Farias',
+          email: 'vitorfgsantos@outlook.com',
         },
-        token: 'DKFNSO32NO54JN3I5N4%V%v5',
-      }).pipe(
-        delay(2000),
-        tap(response =>{   
-          
-        this.authService.setUsuario(response.usuario);
-        this.authService.setToken(response.token);
-
-        })
-      )
+        token: 'aD12h3123523543fgdfg',
+      })
+        .pipe(
+          delay(2000),
+          tap(response => {
+            this.authService.setUsuario(response.usuario);
+            this.authService.setToken(response.token);
+          })
+        );
     }
-    return timer(3000).pipe(mergeMap(()=> throwError('USUARIO OU SENHA INVALIDOS '))); 
+
+    return timer(3000).pipe(
+      mergeMap(() => throwError('Usuário ou senha incorretos.'))
+    );
   }
 }

@@ -1,72 +1,56 @@
-<p>Valor atual de deveExibir: {{ deveExibir}}</p>
-<!--pego o evento de click para chamar a função trocarValor-->
-<button (click)="trocarValor()">trocar valor</button>
+<p> Valor atual dentro de deveExibir: {{ deveExibir }} </p>
 
-<!--adiciono uma condição que retorna um booleano para exibir-->
-<div *ngIf="deveExibir">
-ola estou dentro do ngif1
-</div>
+<button (click)="trocarValor()"> Trocar valor </button>
 
-<!--condição que chama a função/ deve exibir se for maior que 10-->
-<div *ngIf="soma(5, 6) > 10">
-    eu sou a soma maior que 10
-</div>
-
-
-<!--sitax expandida mas utilize o *-->
-<ng-template [ngIf]="deveExibir">
-    <div>content to render whe condicion is true</div>
-</ng-template>
-
-<!--se for falso exibir outra coisa-->
 <div *ngIf="deveExibir; else elseBlock">
-    deu true por isso estou aqui 
+  Olá! Estou dentro do ngIf.
 </div>
 
-<!--criando uma referencia dentro do template-->
 <ng-template #elseBlock>
-    deu falso por isso eu estou aqui 
+  VOU SER EXIBIDO QUANDO deveExibir FOR FALSE!
 </ng-template>
 
-<!--outra forma com os templates separados -->
+<div *ngIf="soma(5, 6) > 10">
+  Exibe baseado na soma
+</div>
 
-<div *ngIf="deveExibir; then thenBlock else senaoBlock"></div>
-<ng-template #thenBlock>elemento separado is true.</ng-template>
-<ng-template #senaoBlock>elemento separado is false.</ng-template>
+<ng-template [ngIf]="deveExibir">
+  <div>Content to render when condition is true.</div>
+</ng-template>
 
-<hr>
-<!-- array criado no meu components-->
-
-<ul>
-    <!--para cada item da array ele vai criar um LI -->
-    <li *ngFor="let fruta of listaFrutas"> {{fruta}} </li>
-</ul>
-
-<ul>
-    <li *ngFor="let carro of carrosLista">
-        {{ carro.placa }} || {{ carro.cor }}
-    </li>
-</ul>
-
-<ul>
-    <!--atribuir a variavel index do ngfor para um tipo de lista numerica ou contador -->
-    <li *ngFor="let carro of carrosLista, let index = index;  first as first, last as ultimo">
-        <!--para não iniciar em zero INTERPOLAÇÃO-->
-     {{first}} - {{index + 1}}  {{ carro.placa }} || {{ carro.cor }}- {{ultimo}}
-    </li>
-</ul>
+<div *ngIf="deveExibir; then thenBlock else elseBlock2"></div>
+<ng-template #thenBlock> BLOCO TRUE DO NG-TEMPLATE </ng-template>
+<ng-template #elseBlock2> BLOCO FALSE DO NG-TEMPLATE </ng-template>
 
 <hr>
-<h2>Resolução do exercicio</h2>
 
 <ul>
-    <li *ngFor="let memesAgrupados of MEMES_AGRUPADOS_POR_CATEGORIA">
-        <h3>{{memesAgrupados.categoria}}</h3>
-        <div *ngFor="let meme of memesAgrupados.memes, let par = even">
-            <img [src]="meme.imagemURL" alt="sumiu" *ngIf="par">
-            <h2 *ngIf="!par">PAR</h2>
-        </div>
-    </li>
+  <li *ngFor="let fruta of listaFrutas"> {{ fruta }} </li>
+</ul>
+
+<ul>
+  <li *ngFor="let carro of carrosLista; let index = index; first as primeiro; last as ultimo">
+    {{ primeiro }} - {{ index + 1 }} - {{ carro.placa }} - {{ carro.cor}} - {{ ultimo }}
+  </li>
+</ul>
+
+<p *ngFor="let fruta of listaFrutas"> {{ fruta }} </p>
+
+<hr>
+<h2> Resolução do exercício </h2>
+
+<ul>
+  <li *ngFor="let memesAgrupados of MEMES_AGRUPADOS_POR_CATEGORIA">
+    <h2> {{ memesAgrupados.categoria }} </h2>
+    
+    <div *ngFor="let meme of memesAgrupados.memes; let par = even">
+      <img [src]="PREFIXO_IMAGEM_URL + meme.imagemURL" *ngIf="par; else blocoPar">
+      <ng-template #blocoPar>
+        <h2> PAR </h2>
+      </ng-template>
+    </div>
+
+  </li>
 </ul>
 
 <br><br><br><br>

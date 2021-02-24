@@ -1,35 +1,39 @@
 <div class="text-center">
 
-    
-    <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="form-signin pt-5">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="form-signin pt-5">
 
-        <div class="pt-2">
-            <input 
-            type="email" class="form-control" 
-            placeholder="Email" name="email" 
-            [(ngModel)]="email" email required
-            [ngClass]="exibeErro('email', form) ? 'is-invalid': ''">
-            <div *ngIf="exibeErro('email',form)" class="invalid-feedback" #emailInput>E-mail Invalido.</div>
-        </div>
-        <div class="pt-2">
-            <input 
-            type="password" class="form-control" 
-            placeholder="password" name="password" 
-            [(ngModel)]="password" required
-            [ngClass]="exibeErro('password', form) ? 'is-invalid': ''">
-            <div *ngIf="exibeErro('password',form)" class="invalid-feedback" #password  >Senha Invalido.</div>
-
-        </div>
-        <p *ngIf="erroNoLogin"> Usuario ou senha invalidos</p>
-        <div class="pt-2">
-            <button class="btn btn-primary btn-block" type="submit" [disabled]="estaCarregando">
-                Entrar
-            </button>
-        </div>
-
-    </form>
-
-    <div *ngIf="estaCarregando" class="spinner-border" role="status"> 
-        <span class="sr-only">Loading...</span>
+    <div class="p-2">
+      <input
+        type="email" class="form-control"
+        placeholder="Email" name="email"
+        [(ngModel)]="email" required email
+        [class.is-invalid]="exibeErro('email', form)" #emailInput>
+        <div *ngIf="exibeErro('email', form)" class="invalid-feedback"> E-mail inválido. </div>
     </div>
+
+    <div class="p-2">
+      <input
+        type="password" class="form-control"
+        placeholder="Password" name="password"
+        [(ngModel)]="password" required
+        [class.is-invalid]="exibeErro('password', form)" #passwordInput>
+        <div *ngIf="exibeErro('password', form)" class="invalid-feedback"> Password inválido. </div>
+    </div>
+
+    <p *ngIf="erroNoLogin">
+      Usuário ou senha inválidos.
+    </p>
+
+    <div class="p-2">
+      <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="estaCarregando">
+        Entrar
+      </button>
+    </div>
+
+  </form>
+
+  <div *ngIf="estaCarregando" class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  
 </div>

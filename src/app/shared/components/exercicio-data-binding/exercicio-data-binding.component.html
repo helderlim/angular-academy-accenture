@@ -1,42 +1,45 @@
-valor autal de valorContador: {{valorContador}}
+Valor atual de valorContador: {{ valorContador }}
 
-<!--EXERCICIO CONTADOR-->
+<!-- EXERCÍCIO CONTADOR -->
 <app-exercicio-contador
-
-[(valor)]="valorContador"
-><!-- TWO WAY DATA BINDING acima--></app-exercicio-contador>
-<hr>
-
-<h1>Exemplos Event Bingding: </h1>
-
-<button (click)="onClick($event)" (mouseenter)="passouMouse()">Clique em mim</button>
-
-<input type="text" [value]="valorDoInput" (keyup)="digitouAlgo($event)">
-
-Valor do Input: {{valorDoInput}}
+  [(valor)]="valorContador"
+></app-exercicio-contador>
 
 <hr>
-<h1>Exemplos Property Bingding: </h1>
-<h2>Palavra:  {{ palavra}}</h2>
-<h2>cor:  {{ color}}</h2>
-<input type="text" [value]="initalValue">
-<br>
-<button [disabled]="isDisabled">clik here</button>
 
-<!--EVENT BINDING escutar eventos do html -->
-<button (click)="botaoClicado()">
-    clik here
-    </button>
-<br>
-<p [attr.aria-label]="accessibilityText">
-    Um texto qualquer
-</p>
-<br>
-<!--EVENT BINDING CUSTOMISADO AULA-->
+
+<!-- EXEMPLOS DE EVENT BINDING -->
+
 <button (click)="onClickBotaoEmissor($event)">
-    Emitir Informação de clique. 
-</button>
-<br><br><br>
+  Emitir informação de clique.
+</button><br><br>
 
+<button
+  (click)="onClick($event)"
+  (mouseenter)="passouMouse()">
+  Clique em mim!
+</button><br><br>
 
-<img [src]="imageURL" >
+<input type="text"
+  [value]="valorDoInput"
+  (keyup)="digitouAlgo($event)"><br><br>
+
+Valor do Input: {{ valorDoInput }}
+
+<hr>
+
+<!-- EXEMPLOS DE PROPERTY BINDING -->
+
+<p> Palavra: {{ palavra }} </p>
+<p> Cor: {{ color }} </p>
+
+<input type="text" [value]="initialValue"><br>
+
+<button [disabled]="isDisabled">Clique em mim!</button><br>
+
+<p [attr.aria-label]="isDisabled ? 'Botão desabilitado' : accessibilityText">
+  Um texto qualquer...
+</p><br>
+
+<img [src]="imageURL">
+

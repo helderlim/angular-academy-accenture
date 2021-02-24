@@ -7,74 +7,49 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ExercicioDataBindingComponent implements OnInit {
 
-  @Input()
-  palavra!: string;
-  @Input()
-  color!: string;
-  @Input()
-  meuTitulo!: string;
-
-  //envia informações para o componente pai
+  @Input() palavra: string;
+  @Input() color: string;
   @Output() clicado = new EventEmitter();
 
-  botaoClicado(){
-    alert('Botão clicado! ');
-  }
-
-  imageURL = 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8dGVjaG5vbG9neXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
-  initalValue =  'valor inicial';
+  imageURL = 'https://3.bp.blogspot.com/_lPCKmqNhqr0/TCMMGbVg2oI/AAAAAAAABLQ/HHgh5Gjbot0/s1600/gatinho-filhote-fofo.jpg';
+  initialValue = 'Valor inicial';
   isDisabled = true;
-  accessibilityText= 'Um texto acessivel a ser lido ';
+  accessibilityText = 'Um texto acessível';
 
   valorDoInput = '';
 
   valorContador = 10;
 
-  constructor() { 
+  constructor() {
     setTimeout(() => {
+      this.isDisabled = false;
       console.log('isDisabled: ', this.isDisabled);
-      this.isDisabled= false;
-      console.log('isDisabled: ', this.isDisabled);
-    },3000 );
-
+    }, 3000);
   }
 
   ngOnInit(): void {
   }
 
   getImageURL() {
-   return this.imageURL;
+    return this.imageURL;
   }
 
-  onClick($event: any){
-    console.log('clicou !', $event);
-    
+  onClick($event) {
+    console.log('clicou!', $event);
   }
 
-  digitouAlgo(_$event: any){
-    this.valorDoInput = _$event.target.value;
-    console.log(_$event);
-    
+  digitouAlgo($event) {
+    this.valorDoInput = $event.target.value;
+    console.log($event);
   }
 
-  onClickBotaoEmissor(_$event: any){
-    console.log('Devo emitir informações para o componente pai. ');
-    //emitindo o evento 
-    this.clicado.emit(_$event);
-    
+  passouMouse() {
+    console.log('alguem passou mouse');
   }
 
-  
-  passouMouse(){
-    console.log('Alguem passou o Mouse ');
-    
+  onClickBotaoEmissor($event) {
+    console.log('Devo emitir informações para o componente pai.');
+    this.clicado.emit('Fui clicado!!!!');
   }
-
-  // onValorAtualizadoNoContador(novoValor: any){
-  //   this.valorContador = novoValor;
-  //   console.log('onValorAtualizadoNoContador', novoValor);
-    
-  // } FUNÇÃO NÃO EXISTE POR CONTA DO <!-- TWO WAY DATA BINDING--!>
-  
 
 }

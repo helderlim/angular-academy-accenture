@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from '../shared/services/auth/auth.service';
+import { Usuario } from '../../shared/interfaces/usuario.interface';
+import { AuthService } from '../../shared/services/auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -9,14 +10,15 @@ import { AuthService } from '../shared/services/auth/auth.service';
 })
 export class HomeComponent implements OnInit {
 
- usuario: any;
+  usuario: Usuario;
 
-constructor(
-  private authService: AuthService,
-){}
+  constructor(
+    private authService: AuthService,
+  ) { }
+
   ngOnInit() {
     this.usuario = this.authService.getUsuario();
-
   }
 
 }
+
