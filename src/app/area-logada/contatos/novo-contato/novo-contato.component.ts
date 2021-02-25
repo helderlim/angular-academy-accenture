@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
+import { ContatosService } from '../contatos.service';
 
 @Component({
   selector: 'app-novo-contato',
@@ -12,19 +16,21 @@ export class NovoContatoComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private contatosService: ContatosService,
+    private toastr: ToastrService,
+    private router: Router,
   ) { }
 
   ngOnInit(){
-    // this.contatoForm = new FormGroup({
-    //   nome: new FormControl(),
-    //   email: new FormControl(),
-    //   banco: new FormControl(),
-    // });
+   
 
     this.contatoForm = this.formBuilder.group({
       nome: ['', Validators.required],
-      banco: ['', [Validators.required, Validators.minLength(3)]],
-      email: ['', [Validators.email, Validators.required]],
+      cpf: ['', Validators.required],
+      ag: ['', [Validators.required, Validators.minLength(4)]],
+      cc: ['', [Validators.required, Validators.minLength(5)]],
+      banco: ['', Validators.required],
+      
     })
   }
   exibeErro(nomeControle: string) {
@@ -40,12 +46,30 @@ export class NovoContatoComponent implements OnInit {
      control.markAsTouched();
     })
   }
-  salvarContato(){
+  onSubmit(){
     if (this.contatoForm.invalid) {
       this.validateAllFormFields();
       return;
     }
-    console.log(this.contatoForm);
+    this.salvarContato();
     
+  }
+
+  salvarContato(){
+    this.contatosService.createContato(this.contatoForm.value)
+      .subscribe(
+        response => this.onSuccessSalvarContato(),
+        error => this.onErrorSalvarContato(),
+      );
+  }
+
+  onSuccessSalvarContato(){
+    this.toastr.success('sucesso!', 'contato criado com sucesso '),
+    this.router.navigate(['contatos']);
+  }
+
+  onErrorSalvarContato(){
+    this.toastr.error('Erro!', 'Alguma coisa deu errado ')
+
   }
 }
