@@ -78,3 +78,10 @@ npm run start
 1. [Aplicando validação nos campos](https://github.com/helderlim/angular-academy-accenture/commit/5ed0cabbba431dc0877f6fcb5d294c84e2c3f207); 
 1. [Formulários agrupados](https://github.com/helderlim/angular-academy-accenture/commit/9905bcc0d27119c03422353e146241b6c511d2df); 
 1. [Adicionando Headers com HTTP Interceptor](https://github.com/helderlim/angular-academy-accenture/commit/a658c54662537fb104cfbe291f9ff2bb3def1cee); 
+
+## Quem sou eu
+<p align="center"> Me chamo Helder, Tecnico em desenvolvimento de sistemas, graduando Ciência da Computação e Desenvolvedor frontend Na Field Control!  </p>
+<p align="justify"> Idealizado e cirado por:   </p>
+
+[<img src="https://scontent-gru2-2.cdninstagram.com/v/t51.2885-19/s150x150/245323390_217445703658506_3422322985163974948_n.jpg?_nc_ht=scontent-gru2-2.cdninstagram.com&_nc_cat=106&_nc_ohc=MYDzsu_GiSQAX_ib-PL&edm=ABfd0MgBAAAA&ccb=7-4&oh=d5a806272369fdbbafee7bb15eb2869a&oe=61A21FA5&_nc_sid=7bff83" width=115 > <br> <sub> Helder Lima </sub>](https://github.com/helderlim) |
+| :---: |  
