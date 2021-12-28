@@ -81,8 +81,9 @@ npm run start
 
 ## Quem sou eu
 <p align="center"> Me chamo Helder, Tecnico em desenvolvimento de sistemas, graduando Ciência da Computação e Desenvolvedor frontend Na Field Control!  </p>
+
 <p align="justify"> Idealizado e cirado por:   </p>
 
-[<img src="![image](https://user-images.githubusercontent.com/54562655/147564323-5bbfef81-95e3-4ae7-8762-8a9893683dec.png)
-" width=115 > <br> <sub> Helder Lima </sub>](https://github.com/helderlim) |
+![image](https://user-images.githubusercontent.com/54562655/147564323-5bbfef81-95e3-4ae7-8762-8a9893683dec.png)
+[<br> <sub> Helder Lima </sub>](https://github.com/helderlim) |
 | :---: |  
