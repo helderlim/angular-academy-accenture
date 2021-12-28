@@ -83,5 +83,6 @@ npm run start
 <p align="center"> Me chamo Helder, Tecnico em desenvolvimento de sistemas, graduando Ciência da Computação e Desenvolvedor frontend Na Field Control!  </p>
 <p align="justify"> Idealizado e cirado por:   </p>
 
-[<img src="https://scontent-gru2-2.cdninstagram.com/v/t51.2885-19/s150x150/245323390_217445703658506_3422322985163974948_n.jpg?_nc_ht=scontent-gru2-2.cdninstagram.com&_nc_cat=106&_nc_ohc=MYDzsu_GiSQAX_ib-PL&edm=ABfd0MgBAAAA&ccb=7-4&oh=d5a806272369fdbbafee7bb15eb2869a&oe=61A21FA5&_nc_sid=7bff83" width=115 > <br> <sub> Helder Lima </sub>](https://github.com/helderlim) |
+[<img src="![image](https://user-images.githubusercontent.com/54562655/147564323-5bbfef81-95e3-4ae7-8762-8a9893683dec.png)
+" width=115 > <br> <sub> Helder Lima </sub>](https://github.com/helderlim) |
 | :---: |  
