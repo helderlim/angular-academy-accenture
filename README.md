@@ -3,6 +3,9 @@
 ## Descrição do Projeto
 <p align="justify"> Este projeto tem como objetivo oferecer algumas das principais soluções que o Angular traz a nossa rotina de desenvolvimento. </p>
 
+### Projeto no ar acesse aqui
+https://angularbasico.vercel.app/login
+
 ### Quais tecnologias estão sendo utilizadas 
 - HTML5, SCSS e JS 
 - Angular 
