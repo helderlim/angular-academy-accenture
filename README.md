@@ -5,7 +5,8 @@
 
 ### Projeto no ar acesse aqui
 https://angularbasico.vercel.app/login
-
+Login - helderfelima16@gmail.com
+senha - 123
 ### Quais tecnologias estão sendo utilizadas 
 - HTML5, SCSS e JS 
 - Angular 
